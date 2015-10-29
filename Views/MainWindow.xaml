@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:viewModel="clr-namespace:MVVMBehaviorExample.ViewModels"
         xmlns:behavior="clr-namespace:MVVMBehaviorExample.Views.Behaviors"
-        behavior:CloseBehavior.Closed="{Binding CloseCommand}"
+        behavior:CloseBehavior.Closing="{Binding CloseCommand}"
         Title="MainWindow" Height="350" Width="525">
     <Window.DataContext>
         <viewModel:MainWindowViewModel/>

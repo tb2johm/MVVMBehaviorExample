@@ -33,9 +33,10 @@ namespace MVVMBehaviorExample.ViewModels
         {
             SaveCommand = new RelayCommand(Save, () => !_textSaved);
 
-            CloseCommand = new RelayCommand(Save);
+            CloseCommand = new RelayCommand(Save, () => _textSaved);
         }
 
+        /* Just a fake save, but code to save text could be placed here*/
         private void Save()
         {
             _textSaved = true;
