@@ -29,10 +29,10 @@ namespace MVVMBehaviorExample.Views.Behaviors
 
             if (window == null || e.NewValue == null) return;
 
-            window.Closing += window_Closed;
+            window.Closing += window_Closing;
         }
 
-        static void window_Closed(object sender, EventArgs e)
+        static void window_Closing(object sender, EventArgs e)
         {
             var closeCommand = GetClosing(sender as Window);
 
