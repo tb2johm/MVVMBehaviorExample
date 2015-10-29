@@ -22,7 +22,7 @@ namespace MVVMBehaviorExample.ViewModels
         }
 
         public RelayCommand SaveCommand { get; set; }
-
+        public RelayCommand CloseCommand { get; set; }
         
         
         private bool _textSaved = true;
@@ -31,11 +31,15 @@ namespace MVVMBehaviorExample.ViewModels
 
         public MainWindowViewModel()
         {
-            SaveCommand = new RelayCommand(() =>
-            {
-                _textSaved = true;
-                SaveCommand.RaiseCanExecuteChanged();
-            }, () => !_textSaved);
+            SaveCommand = new RelayCommand(Save, () => !_textSaved);
+
+            CloseCommand = new RelayCommand(Save);
+        }
+
+        private void Save()
+        {
+            _textSaved = true;
+            SaveCommand.RaiseCanExecuteChanged();
         }
     }
 }
